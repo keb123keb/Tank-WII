@@ -136,7 +136,7 @@ printf("\033[1;35m");
 	bool flag[3];
 	flag[0] = false; flag[1] = false; flag[2] = false;
 	
-	while(p.gg()==false&&score<15)
+	while(p.gg()==false&&score<score_target)
 	{
 		if( kbhit() ){
 			if((flag[0]||flag[1]||flag[2])){
@@ -217,12 +217,13 @@ printf("\033[1;35m");
 		cout << " GAMEOVER" << endl;
 		printf("\033[m");
 	}
-	if(score>=15){
+	if(score>=score_target){
 		clearScreen();
 		printf("\033[1;33m");
 		gotoxy(width/2 - 3 < 0 ? 0 : width/2 - 3, height/2);
 		cout << "YOU WIN!!" << endl;
 		printf("\033[m");
+        reset_terminal_mode();
 	}
 
 }

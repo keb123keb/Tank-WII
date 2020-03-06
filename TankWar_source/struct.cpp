@@ -67,7 +67,7 @@ void set_conio_terminal_mode()
 
     /* take two copies - one for now, one for later */
     tcgetattr(0, &orig_termios);
-    memcpy(&new_termios, &orig_termios, sizeof(new_termios));
+    memcpy(&new_termios, &orig_termios, sizeof(orig_termios));
 
     /* register cleanup handler, and set the new terminal mode */
     atexit(reset_terminal_mode);

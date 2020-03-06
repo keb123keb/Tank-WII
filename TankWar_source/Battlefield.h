@@ -29,6 +29,8 @@ class Battlefield
 		void monster_show();
 		void leave_player(int &mx, int &my);
 	private:
+        const int score_target =1;
+
 		vector<monster> Mlist;
 		vector<player> Plist;
 		vector<trap> Tlist;
